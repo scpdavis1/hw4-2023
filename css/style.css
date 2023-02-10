@@ -137,6 +137,7 @@ nav ul li:hover, nav ul li:focus {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   grid-row-gap: 15px;
+  grid-column-gap: 15px;
 }
 
 /* Step 5: Write selector/rule property to add the background image to the 
@@ -145,7 +146,7 @@ first div in the grid  and place it in the grid. */
 .container div:first-child {
   background-image: url("/images/header.jpg");
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: -1;
 }
 
 /* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
@@ -189,14 +190,33 @@ first div in the grid  and place it in the grid. */
 
     /* Step 9: Write the selector/rule property to style the nav element */
 
+    nav {
+      text-align: right;
+    }
  
     /* Step 10: Write the selector/rule property to update the .container class */
+
+    .container {
+      display: grid;
+      grid-template-columns: 50px auto 500px auto 50px;
+    }
 
 
     /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
 
+    .about, .clients, .method-image, .contact-image {
+      grid-column: 3 / span 2;
+    }
 
+    .method, .contact, .about-image, .clients-image {
+      grid-column: 2 / span 2;
+    }
 
     /* Step 13:Write the selector/rule property to update the .text-block class */
+
+    .text-block {
+      max-height: 250px;
+      overflow: auto;
+    }
 
   }
